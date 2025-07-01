@@ -45,8 +45,9 @@ if __name__ == '__main__':
     )
     parser.add_argument('input_file', type=str, help='Input file')
     args = parser.parse_args()
-    file_name = args.input_file
-    full_path = os.path.abspath(file_name)
+    input_path = args.input_file
+    file_name = os.path.basename(input_path)
+    full_path = os.path.abspath(input_path)
     dir_path = os.path.dirname(full_path)
     new_full_path = os.path.join(dir_path, f'new_{file_name}')
     path, _ = os.path.splitext(full_path)
